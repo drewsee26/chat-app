@@ -13,19 +13,21 @@ var config = {
     storageBucket: "chat-app-ba0ff.appspot.com",
     messagingSenderId: "40164148717"
 };
-firebase.initializeApp(config);
+var fire = firebase.initializeApp(config);
 
 class App extends Component {
     constructor(props) {
         super(props)
-        this.roomsRef = this.props.firebase.database().ref('rooms')
     }
 
+    componentDidMount() {
+
+    }
     render() {
         return (
             <div className="container-fluid App">
                 <h1 className="col-md-3 text-center">Mobile Messenger</h1>
-                <RoomList room={this.roomsRef}/>
+                <RoomList firebase={fire}/>
             </div>
         );
     }
