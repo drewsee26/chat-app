@@ -7,10 +7,12 @@ class RoomList extends Component {
         this.state = {
             rooms: []
         }
+
+        this.roomsRef = this.props.firebase.database().ref('rooms')
     }
 
     componentDidMount() {
-        this.props.room.on('child_added', snapshot => {
+        this.roomsRef.on('child_added', snapshot => {
             const room = snapshot.val()
             room.key = snapshot.key
             this.setState({
@@ -21,11 +23,11 @@ class RoomList extends Component {
 
     render() {
         return (
-            <ul className='container-fluid'>
-                {this.state.rooms.map(room =>
-                    <li className='col-md-3 text-left'>{room}</li>
-                )}
-            </ul>
+                <ul className="container-fluid col-md-3">
+                    { this.state.rooms.map( room =>
+                    <li className='col-md-3 text-left' key={room.key}>{room.name}</li>
+                    )}
+                </ul>
         )
     }
 }
