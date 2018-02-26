@@ -23,9 +23,9 @@ class RoomList extends Component {
 
     render() {
         return (
-                <ul className="container-fluid col-md-3">
+                <ul>
                     { this.state.rooms.map( room =>
-                    <li className='col-md-3 text-left' key={room.key}>{room.name}</li>
+                    <li key={room.key}>{room.name}</li>
                     )}
                 </ul>
         )

@@ -25,9 +25,9 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="container-fluid App">
+            <div className="container-fluid">
                 <h1 className="col-md-3 text-center">Mobile Messenger</h1>
-                <RoomList firebase={fire}/>
+                <RoomList className="col-md-3" firebase={fire}/>
             </div>
         );
     }
