@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import * as firebase from 'firebase'
 import RoomList from './components/RoomList'
-import logo from './logo.svg';
-import './App.css';
-
+import './App.css'
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyAsaCn0doxPWrH1J_mBrlPj6ByFObtuqCY",
@@ -26,8 +24,14 @@ class App extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <h1 className="col-md-3 text-center">Mobile Messenger</h1>
-                <RoomList className="col-md-3" firebase={fire}/>
+                <div className="sidebar-nav">
+                    <div className="row">
+                        <h1 className="col-md-3 text-center">Mobile Messenger</h1>
+                    </div>
+                    <div className="row">
+                        <RoomList className="col-md-3" firebase={fire}/>
+                    </div>
+                </div>
             </div>
         );
     }
