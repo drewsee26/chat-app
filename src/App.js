@@ -3,7 +3,7 @@ import * as firebase from 'firebase'
 import RoomList from './components/RoomList'
 import './App.css'
 // Initialize Firebase
-var config = {
+const config = {
     apiKey: "AIzaSyAsaCn0doxPWrH1J_mBrlPj6ByFObtuqCY",
     authDomain: "chat-app-ba0ff.firebaseapp.com",
     databaseURL: "https://chat-app-ba0ff.firebaseio.com",
@@ -11,7 +11,7 @@ var config = {
     storageBucket: "chat-app-ba0ff.appspot.com",
     messagingSenderId: "40164148717"
 };
-var fire = firebase.initializeApp(config);
+let fire = firebase.initializeApp(config);
 
 class App extends Component {
     constructor(props) {
@@ -26,10 +26,10 @@ class App extends Component {
             <div className="container-fluid">
                 <div className="sidebar-nav">
                     <div className="row">
-                        <h1 className="col-md-3 text-center">Mobile Messenger</h1>
+                        <h1 className="col-md-3">Mobile Messenger</h1>
                     </div>
                     <div className="row">
-                        <RoomList className="col-md-3" firebase={fire}/>
+                        <RoomList firebase={fire}/>
                     </div>
                 </div>
             </div>
